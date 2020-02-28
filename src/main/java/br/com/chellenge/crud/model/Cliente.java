@@ -39,6 +39,9 @@ public class Cliente implements Serializable{
 	@Column(length = 20, nullable = false)
 	private String telefone;
 	
+	@Column(length = 10, nullable = false)
+	private String cep;
+	
 	@Column(length = 100, nullable = false)
 	private String endereco;
 	
@@ -54,7 +57,5 @@ public class Cliente implements Serializable{
 	@Column(length = 20, nullable = false)
 	private String pais;
 	
-	@Column(length = 10, nullable = false)
-	private String cep;
 
 }

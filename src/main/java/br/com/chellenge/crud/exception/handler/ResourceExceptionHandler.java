@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.chellenge.crud.exception.ClienteNuloOuInexistenteException;
+import br.com.chellenge.crud.exception.ClienteException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	
-	@ExceptionHandler(ClienteNuloOuInexistenteException.class)
-	public ResponseEntity<ApiError> handlerIdentificadorNulo(ClienteNuloOuInexistenteException ex){		
+	@ExceptionHandler(ClienteException.class)
+	public ResponseEntity<ApiError> handlerClienteNulo(ClienteException ex){		
 		ApiError error = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(), new Date());
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
 	}
