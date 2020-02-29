@@ -17,7 +17,7 @@ import br.com.chellenge.crud.model.Cliente;
 import br.com.chellenge.crud.service.ClienteService;
 
 @RestController
-@RequestMapping(value = "cliente")
+@RequestMapping(value = "clientes")
 public class ClienteResource {
 
 	@Autowired
