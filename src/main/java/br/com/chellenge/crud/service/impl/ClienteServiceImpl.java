@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.chellenge.crud.exception.ClienteException;
+import br.com.chellenge.crud.exception.ClienteIdInexistenteExcpetion;
 import br.com.chellenge.crud.model.Cliente;
 import br.com.chellenge.crud.repository.ClienteRepository;
 import br.com.chellenge.crud.service.ClienteService;
@@ -24,9 +25,10 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public Cliente atualizar(Cliente cliente) {
-		Cliente obj = this.repository.save(cliente);
-		return obj;
+	public Cliente editar(Cliente cliente) {
+		Cliente editarCliente = repository.save(cliente);
+		return editarCliente;
+		
 	}
 
 	@Override
@@ -43,12 +45,19 @@ public class ClienteServiceImpl implements ClienteService {
 	@Override
 	public List<Cliente> listar() {
 		List<Cliente> clientes = this.repository.findAll();
-		if (clientes.isEmpty()) {
-			throw new ClienteException("Ops! Não existe nenhum cliente cadastrado.");
-		} else {
-			return clientes;
-		}
+		return clientes;
 
+	}
+
+	@Override
+	public Cliente listarById(Integer id) {
+		Optional<Cliente> cliente = this.repository.findById(id);
+		if(!cliente.isPresent()) {
+			throw new ClienteIdInexistenteExcpetion("Id nulo ou inexistente!");
+		}else {
+			return cliente.get();
+		}
+		
 	}
 
 }

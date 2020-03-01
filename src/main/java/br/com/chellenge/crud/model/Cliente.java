@@ -45,6 +45,9 @@ public class Cliente implements Serializable{
 	@Column(length = 100, nullable = false)
 	private String endereco;
 	
+	@Column(length = 20, nullable = false)
+	private String bairro;
+	
 	@Column(length = 10, nullable = false)
 	private Integer numero;
 	

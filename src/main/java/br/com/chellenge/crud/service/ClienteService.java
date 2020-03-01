@@ -6,11 +6,13 @@ import br.com.chellenge.crud.model.Cliente;
 
 public interface ClienteService {
 	
-	Cliente salvar(Cliente cli);
+	Cliente salvar(Cliente cliente);
 	
-	Cliente atualizar(Cliente cli);
+	Cliente editar(Cliente cliente);
 	
 	void remover(Integer id);
 	
 	List<Cliente> listar();
+	
+	Cliente listarById(Integer id);
 }
