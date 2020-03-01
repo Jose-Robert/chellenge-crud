@@ -6,11 +6,10 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>Cadastro</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-            <script type="text/javascript" >
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
 
         $(document).ready(function() {
 
@@ -75,13 +74,23 @@
 
     </script>
     </head>
-            
+    <script>
+		function formatar(mascara, documento){
+		  var i = documento.value.length;
+		  var saida = mascara.substring(0,1);
+		  var texto = mascara.substring(i)
+		  
+		  if (texto.substring(0,1) != saida){
+		            documento.value += texto.substring(0,1);
+		  }
+		}
+	</script>
 </head>
 <body>
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<strong>Cadastro de Clientes</strong>
+			<h3><strong>Cadastro de Clientes</strong></h3>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" th:object="${cliente}" th:action="@{/save}" method="POST" style="margin: 10px">
@@ -108,55 +117,55 @@
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('cpf')}? 'has-error'">
 								<label>CPF</label> 
-								<input type="text" class="form-control input-sm" th:field="*{cpf}" maxlength="150" placeholder="Informe o cpf"/>
+								<input type="text" class="form-control is-invalid" th:field="*{cpf}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" placeholder="Informe o cpf"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('telefone')}? 'has-error'">
 								<label>Telefone</label> 
-								<input type="text" class="form-control input-sm" th:field="*{telefone}" maxlength="150" placeholder="Inserir o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{telefone}" maxlength="13" OnKeyPress="formatar('## #####-####', this)" placeholder="Inserir o telefone"/>
 							</div>
 						</div>					
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('cep')}? 'has-error'">
 								<label>CEP</label> 
-								<input type="text" class="form-control input-sm" th:field="*{cep}" maxlength="150" placeholder="cep"/>
+								<input type="text" class="form-control input-sm" th:field="*{cep}" maxlength="9" OnKeyPress="formatar('#####-###', this)" placeholder="cep"/>
 							</div>
 						</div>
 						<div class="form-group row">
-							<div class="col-md-2" th:classappend="${#fields.hasErrors('endereco')}? 'has-error'">
+							<div class="col-md-4" th:classappend="${#fields.hasErrors('endereco')}? 'has-error'">
 								<label>Endereço</label> 
-								<input type="text" class="form-control input-sm" th:field="*{endereco}" maxlength="150" placeholder="Informe o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{endereco}" maxlength="15" placeholder="Informe o endereco"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('numero')}? 'has-error'">
 								<label>Número</label> 
-								<input type="text" class="form-control input-sm" th:field="*{numero}" maxlength="150" placeholder="Informe o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{numero}" maxlength="8" placeholder="Informe o numero"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('bairro')}? 'has-error'">
 								<label>Bairro</label> 
-								<input type="text" class="form-control input-sm" th:field="*{bairro}" maxlength="150" placeholder="Informe o bairro"/>
+								<input type="text" class="form-control input-sm" th:field="*{bairro}" maxlength="20" placeholder="Informe o bairro"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('cidade')}? 'has-error'">
 								<label>Cidade</label> 
-								<input type="text" class="form-control input-sm" th:field="*{cidade}" maxlength="150" placeholder="Informe o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{cidade}" maxlength="15" placeholder="Informe o cidade"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('estado')}? 'has-error'">
 								<label>UF</label> 
-								<input type="text" class="form-control input-sm" th:field="*{estado}" maxlength="150" placeholder="Informe o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{estado}" maxlength="2" placeholder="Informe o estado"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('pais')}? 'has-error'">
 								<label>País</label> 
-								<input type="text" class="form-control input-sm" th:field="*{pais}" maxlength="150" placeholder="Informe o telefone"/>
+								<input type="text" class="form-control input-sm" th:field="*{pais}" maxlength="20" placeholder="Informe o pais"/>
 							</div>
 						</div>				
 					</fieldset>

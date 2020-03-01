@@ -33,7 +33,7 @@ public class Cliente implements Serializable{
 	@Column(length = 75, nullable = false)
 	private String nome;
 	
-	@Column(length = 11, nullable = false, unique = true)
+	@Column(length = 14, nullable = false, unique = true)
 	private String cpf;
 	
 	@Column(length = 20, nullable = false)
