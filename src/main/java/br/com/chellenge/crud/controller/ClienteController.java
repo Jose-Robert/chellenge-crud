@@ -52,9 +52,7 @@ public class ClienteController {
 		if(result.hasErrors()) {
 			return add(cliente);
 		}
-		
 		service.salvar(cliente);
-		
 		return findAll();
 	}
 	
