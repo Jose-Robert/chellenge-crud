@@ -38,7 +38,7 @@ public class ClienteServiceImpl implements ClienteService {
 			this.repository.delete(cli.get());
 
 		} catch (Exception e) {
-			throw new ClienteException("Não foi possivel realizar a operação!!!");
+			throw new ClienteException("Não foi deletar o cliente!!!");
 		}
 	}
 

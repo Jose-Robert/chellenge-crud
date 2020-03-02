@@ -1,17 +1,10 @@
 package br.com.chellenge.crud.dto;
 
+import lombok.Data;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class UsuarioLoginDTO {
-	
+
 	private String email;
-	private String senha;
+	private String password;
 }

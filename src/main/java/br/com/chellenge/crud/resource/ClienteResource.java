@@ -29,7 +29,7 @@ public class ClienteResource {
 	@Autowired
 	private ClienteService clienteService;
 
-	@ApiOperation(value = "Cadastrar um cliente", 
+	@ApiOperation(value = "Cadastrar um novo cliente", 
 				  notes = "Este metodo cadastra um novo usuario no sistema.")
 	@ApiResponses({ 
 		@ApiResponse(code = 400, message = "Requisição inválida."),

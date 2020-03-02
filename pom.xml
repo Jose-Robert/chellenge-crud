@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>2.3.0</version><!--$NO-MVN-MAN-VER$-->
+			<version>2.3.0</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -99,12 +99,12 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.9</version><!--$NO-MVN-MAN-VER$-->
+			<version>1.9</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<dependency>
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
-			<version>2.0.5</version><!--$NO-MVN-MAN-VER$-->
+			<version>2.0.5</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 	</dependencies>
 
