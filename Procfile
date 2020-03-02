@@ -1,2 +1,2 @@
-web: java -Dserver.port=$PORT -Dspring.profiles.active=prod $JAVA_OPTS -jar
-target/chellenge-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -jar -Dspring.profiles.active=prod 
+target/dependency/webapp-runner.jar --port $PORT target/chellenge-0.0.1-SNAPSHOT.jar
