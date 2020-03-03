@@ -70,7 +70,7 @@ public class SwaggerConfig {
 	private ApiInfo metaData() {
 		return new ApiInfoBuilder()
 		.title("Cliente API")
-		.description("\"Consultando API de clientes\"")
+		.description("Documentação da API para acesso aos endpoints do desafio.")
 		.version("1.0.0")
 		.license("Apache License Version 2.0")
 		.licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
