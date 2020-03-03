@@ -27,8 +27,8 @@ public class UsuarioResource {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@ApiOperation(value = "Cadastrar um novo usuario", 
-			  notes = "Este metodo edita um cliente por {id}.")
+	@ApiOperation(value = "Cadastrar usuario", 
+			  notes = "Este metodo cadastra um novo usuario na base.")
 	@ApiResponses({ 
 		@ApiResponse(code = 400, message = "Requisição inválida."),
 		@ApiResponse(code = 401, message = "Não autorizado."), 
@@ -41,7 +41,7 @@ public class UsuarioResource {
 		return ResponseEntity.status(HttpStatus.CREATED).body(user);
 	}
 	
-	@ApiOperation(value = "Editar um usuario", 
+	@ApiOperation(value = "Editar usuario", 
 			  notes = "Este metodo atualiza um usuario por {id}.")
 	@ApiResponses({ 
 		@ApiResponse(code = 400, message = "Requisição inválida."),
@@ -84,7 +84,7 @@ public class UsuarioResource {
 		return ResponseEntity.noContent().build();
 	}
 
-	@ApiOperation(value = "Listar usuarios por {id}", 
+	@ApiOperation(value = "Listar usuarios {id}", 
 			  notes = "Este metodo busca usuario por {id}.")
 	@ApiResponses({ 
 		@ApiResponse(code = 400, message = "Requisição inválida."),
