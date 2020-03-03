@@ -21,7 +21,7 @@ public class ClienteController {
 		
 	@GetMapping("/")
 	public ModelAndView findAll() {	
-		ModelAndView mv = new ModelAndView("/cliente");
+		ModelAndView mv = new ModelAndView("cliente");
 		mv.addObject("clientes", service.listar());
 		
 		return mv;
@@ -30,7 +30,7 @@ public class ClienteController {
 	@GetMapping("/add")
 	public ModelAndView add(Cliente cliente) {
 		
-		ModelAndView mv = new ModelAndView("/add");
+		ModelAndView mv = new ModelAndView("add");
 		mv.addObject("cliente", cliente);
 		
 		return mv;
