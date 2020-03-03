@@ -10,7 +10,6 @@ import br.com.chellenge.crud.exception.UsuarioException;
 import br.com.chellenge.crud.model.Usuario;
 import br.com.chellenge.crud.repository.UsuarioRepository;
 import br.com.chellenge.crud.service.UsuarioService;
-import br.com.chellenge.crud.util.HashUtil;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -18,10 +17,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	@SuppressWarnings("static-access")
 	@Override
 	public Usuario cadastrar(Usuario usuario) {
-		usuario.setSenha(new HashUtil().getSecureHash(""));
 		Usuario savlarUser = usuarioRepository.saveAndFlush(usuario);
 		return savlarUser;
 	}

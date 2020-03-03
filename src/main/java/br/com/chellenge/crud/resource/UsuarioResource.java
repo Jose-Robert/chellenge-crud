@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.chellenge.crud.dto.UsuarioLoginDTO;
 import br.com.chellenge.crud.model.Usuario;
 import br.com.chellenge.crud.service.UsuarioService;
 import io.swagger.annotations.ApiOperation;
@@ -100,8 +99,8 @@ public class UsuarioResource {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)	
-	public ResponseEntity<Usuario> login(@RequestBody UsuarioLoginDTO user) {
-		Usuario loginUsuario = usuarioService.login(user.getEmail(), user.getPassword());
+	public ResponseEntity<Usuario> login(@RequestBody Usuario user) {
+		Usuario loginUsuario = usuarioService.login(user.getEmail(), user.getSenha());
 		return ResponseEntity.ok(loginUsuario);
 	}
 
