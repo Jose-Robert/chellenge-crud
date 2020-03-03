@@ -20,8 +20,6 @@ $ mvn spring-boot:run
 
 **4.** **Documentação da API para acesso aos endpoints do desafio.**
 
-![swagger](https://user-images.githubusercontent.com/26948979/75812207-9112c900-5d6c-11ea-9036-213f1a6543fc.png)
-
  - [ ] *URL:* [[http://localhost:8080/crud/swagger-ui.html](http://localhost:8080/crud/swagger-ui.html))
  
    ![swagger](https://user-images.githubusercontent.com/26948979/75812207-9112c900-5d6c-11ea-9036-213f1a6543fc.png)
