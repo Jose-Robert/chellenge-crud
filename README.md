@@ -26,6 +26,6 @@ $ mvn spring-boot:run
    
 # Heroku
 ## API Clientes
- - [ ] **URL:** [http://chellengeapp.herokuapp.com/crud/](http://crudchellengeapp.herokuapp.com/crud/)
+ - [ ] **URL:** [http://chellengeapp.herokuapp.com/crud/](http://chellengeapp.herokuapp.com/crud/)
 ##  Swagger Documentation
- - [ ] **URL:** [http://chellengeapp.herokuapp.com/crud/swagger-ui.html](http://crudchellengeapp.herokuapp.com/crud/swagger-ui.html)
+ - [ ] **URL:** [http://chellengeapp.herokuapp.com/crud/swagger-ui.html](http://chellengeapp.herokuapp.com/crud/swagger-ui.html)
