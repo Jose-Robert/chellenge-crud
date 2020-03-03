@@ -8,16 +8,16 @@
 <body>
 	<div class="container">
 		<h1 class="col-sm-12">Login</h1>
-		<form th:action="@{/login}" method="POST" >
+		<form th:object="${login}" th:action="@{/processLogin}" modelAttribute="login" method="POST" >
 			<div class="row col-sm-6">
 				<div class="form-group">
 					<label class="col-sm-2">Username</label> 
-					<span class="col-sm-9"><input class="form-control" type="text" th:field="*{email}" name="email" /></span>
+					<span class="col-sm-9"><input class="form-control" type="text" value="username" th:field="*{username}" name="username" /></span>
 				</div>
                 <br/>
 				<div class="form-group">
 					<label class="col-sm-2">Password</label> 
-					<span class="col-sm-9"><input class="form-control" type="password" th:field="*{senha}" name="email" /></span>
+					<span class="col-sm-9"><input class="form-control" type="password" value="password" h:field="*{password}" name="password" /></span>
 				</div>
 
 				<div class="col-sm-12">

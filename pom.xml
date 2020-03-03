@@ -106,6 +106,7 @@
 			<artifactId>thymeleaf-layout-dialect</artifactId>
 			<version>2.0.5</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
+		
 	</dependencies>
 
 	<build>
