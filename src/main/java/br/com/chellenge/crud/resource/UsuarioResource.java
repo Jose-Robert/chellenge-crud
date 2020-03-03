@@ -98,6 +98,14 @@ public class UsuarioResource {
 		return ResponseEntity.ok(usuario);
 	}
 	
+	@ApiOperation(value = "Fazer login", 
+			  notes = "Este metodo realiza login de usario.")
+	@ApiResponses({ 
+		@ApiResponse(code = 400, message = "Requisição inválida."),
+		@ApiResponse(code = 401, message = "Não autorizado."), 
+		@ApiResponse(code = 403, message = "Não permitido."),
+		@ApiResponse(code = 404, message = "Recurso não encontrado."),
+		@ApiResponse(code = 500, message = "Erro interno do sistema") })
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)	
 	public ResponseEntity<Usuario> login(@RequestBody Usuario user) {
 		Usuario loginUsuario = usuarioService.login(user.getEmail(), user.getSenha());
