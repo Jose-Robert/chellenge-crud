@@ -49,7 +49,7 @@ public class Cliente implements Serializable{
 	private String bairro;
 	
 	@Column(length = 10, nullable = false)
-	private Integer numero;
+	private String numero;
 	
 	@Column(length = 100, nullable = false)
 	private String cidade;
