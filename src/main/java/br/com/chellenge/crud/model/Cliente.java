@@ -30,7 +30,7 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(length = 75, nullable = false)
+	@Column(length = 200, nullable = false)
 	private String nome;
 	
 	@Column(length = 14, nullable = false, unique = true)
@@ -42,22 +42,22 @@ public class Cliente implements Serializable{
 	@Column(length = 10, nullable = false)
 	private String cep;
 	
-	@Column(length = 100, nullable = false)
+	@Column(length = 200, nullable = false)
 	private String endereco;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 100, nullable = false)
 	private String bairro;
 	
 	@Column(length = 10, nullable = false)
 	private Integer numero;
 	
-	@Column(length = 75, nullable = false)
+	@Column(length = 100, nullable = false)
 	private String cidade;
 	
-	@Column(length = 75, nullable = false)
+	@Column(length = 100, nullable = false)
 	private String estado;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 100, nullable = false)
 	private String pais;
 	
 

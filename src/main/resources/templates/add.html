@@ -110,7 +110,7 @@
 						<div class="form-group row">                                                          
 							<div class="col-md-4" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
 							    <label>Nome</label>
-							    <input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="Informe seu nome" maxlength="50" 
+							    <input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="Informe seu nome" maxlength="200" 
 							    data-error="Por favor, informe seu nome" required/>
 							    <div class="help-block with-errors"></div>
 							</div>
@@ -158,7 +158,7 @@
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('bairro')}? 'has-error'">
 								<label>Bairro</label> 
-								<input type="text" class="form-control input-sm" th:field="*{bairro}" autofocus="autofocus" maxlength="20" placeholder="Informe seu bairro"
+								<input type="text" class="form-control input-sm" th:field="*{bairro}" autofocus="autofocus" maxlength="100" placeholder="Informe seu bairro"
 								data-error="Por favor, informe seu bairro" required/>
 								<div class="help-block with-errors"></div>
 							</div>
@@ -166,7 +166,7 @@
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('cidade')}? 'has-error'">
 								<label>Cidade</label> 
-								<input type="text" class="form-control input-sm" th:field="*{cidade}" autofocus="autofocus" maxlength="15" placeholder="Informe sua cidade"
+								<input type="text" class="form-control input-sm" th:field="*{cidade}" autofocus="autofocus" maxlength="100" placeholder="Informe sua cidade"
 								data-error="Por favor, informe sua cidade" required/>
 								<div class="help-block with-errors"></div>
 							</div>
@@ -182,7 +182,7 @@
 						<div class="form-group row">
 							<div class="col-md-2" th:classappend="${#fields.hasErrors('pais')}? 'has-error'">
 								<label>País</label> 
-								<input type="text" class="form-control input-sm" th:field="*{pais}" autofocus="autofocus" maxlength="20" placeholder="Informe seu pais"
+								<input type="text" class="form-control input-sm" th:field="*{pais}" autofocus="autofocus" maxlength="100" placeholder="Informe seu pais"
 								data-error="Por favor, informe seu CEP" required/>
 								<div class="help-block with-errors"></div>
 							</div>
@@ -190,7 +190,7 @@
 					</fieldset>
 				</div>
 				<div class="form-row">
-					<button type="submit" class="btn btn-sm btn-primary" autofocus="autofocus">Salvar</button>
+					<button type="submit" class="btn btn-sm btn-primary" autofocus="autofocus" th:href="@{/}">Salvar</button>
 					<a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
 				</div>
 			</form>
