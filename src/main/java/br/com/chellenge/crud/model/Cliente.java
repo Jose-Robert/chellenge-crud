@@ -21,7 +21,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Table(name = "T_CLIENTE")
+@Table(name = "CLIENTE")
 public class Cliente implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

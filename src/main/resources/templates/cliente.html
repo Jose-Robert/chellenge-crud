@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>API Clientes</title>
@@ -13,6 +14,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3><strong>Lista de Clientes</strong></h3>
+			<div sec:authorize="isAuthenticated()" align="left"><a th:href="@{/logout}"><strong>Sair</strong></a></div>
 		</div>
 		<div class="panel-body">
 			<div class="table-responsive">

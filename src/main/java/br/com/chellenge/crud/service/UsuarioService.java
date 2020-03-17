@@ -1,21 +1,14 @@
 package br.com.chellenge.crud.service;
 
-import java.util.List;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import br.com.chellenge.crud.model.Usuario;
+import br.com.chellenge.crud.model.NovoUsuario;
 
-public interface UsuarioService {
 
-	Usuario cadastrar(Usuario user);
-	
-	Usuario editar(Usuario user);
-	
-	void remover(Integer id);
-	
-	List<Usuario> listar();
-	
-	Usuario findUserById(Integer id);
+public interface UsuarioService extends UserDetailsService {
 
-	Usuario login(String email, String senha);
-	
+	Usuario findByEmail(String email);
+
+    Usuario save(NovoUsuario novoUsuario);
 }

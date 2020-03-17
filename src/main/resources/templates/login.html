@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+<title>Cliente API - Log in</title>
 </head>
 <body>
-	<div class="container">
-		<h1 class="col-sm-12">Login</h1>
-		<form th:object="${login}" th:action="@{/processLogin}" modelAttribute="login" method="POST" >
-			<div class="row col-sm-6">
-				<div class="form-group">
-					<label class="col-sm-2">Username</label> 
-					<span class="col-sm-9"><input class="form-control" type="text" value="username" th:field="*{username}" name="username" /></span>
-				</div>
-                <br/>
-				<div class="form-group">
-					<label class="col-sm-2">Password</label> 
-					<span class="col-sm-9"><input class="form-control" type="password" value="password" h:field="*{password}" name="password" /></span>
-				</div>
-
-				<div class="col-sm-12">
-					<input type="submit" value="Login" class="btn btn-default" />
-				</div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Cliente API - Log In</a>
 			</div>
-		</form>
-		<div class="clearfix"></div>
-        <br/>
-        <br/>
-		<div class="col-sm-12">
-	        <form action="/signin/facebook" method="POST">
-	            <input type="hidden" name="scope" value="public_profile" />
-	            <input type="submit" value="Login using Facebook" class="btn btn-primary" />
-	        </form>
 		</div>
-		
-		
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h1>Login</h1><br>
+				<form th:action="@{/login}" method="post">
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">Email ou senha invalido.</div>
+					</div>
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">Você foi desconectado.</div>
+					</div>
+					<div class="form-group">
+						<label for="username">Email</label>: <input type="text"
+							id="username" name="username" class="form-control"
+							autofocus="autofocus" placeholder="Username" />
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>: <input type="password"
+							id="password" name="password" class="form-control"
+							placeholder="Password" />
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="Entrar" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<span>Novo usuario?<a href="/" th:href="@{/registration}"> Registre-se aqui.</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
 </html>
