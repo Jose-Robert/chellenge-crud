@@ -1,6 +1,7 @@
 package br.com.chellenge.crud.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -36,6 +40,19 @@ public class Cliente implements Serializable{
 	@Column(length = 14, nullable = false, unique = true)
 	private String cpf;
 	
+	@NotNull
+	@Column(length = 12)
+	private String rg;
+	
+	@NotNull
+	@Column(length = 10)
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private Date dataNasc;
+	
+	@NotNull
+	@Column(length = 255)
+	private String email;
+	
 	@Column(length = 20, nullable = false)
 	private String telefone;
 	
@@ -60,5 +77,4 @@ public class Cliente implements Serializable{
 	@Column(length = 100, nullable = false)
 	private String pais;
 	
-
 }
