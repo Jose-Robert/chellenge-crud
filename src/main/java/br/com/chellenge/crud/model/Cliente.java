@@ -1,7 +1,7 @@
 package br.com.chellenge.crud.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,8 +46,8 @@ public class Cliente implements Serializable{
 	
 	@NotNull
 	@Column(length = 10)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date dataNasc;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)	
+	private LocalDate dataNasc;
 	
 	@NotNull
 	@Column(length = 255)
