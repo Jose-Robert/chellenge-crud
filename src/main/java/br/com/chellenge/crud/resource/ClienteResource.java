@@ -23,14 +23,14 @@ import io.swagger.annotations.ApiResponses;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "clientes")
+@RequestMapping(value = "cliente")
 public class ClienteResource {
 
 	@Autowired
 	private ClienteService clienteService;
 
 	@ApiOperation(value = "Cadastrar um novo cliente", 
-				  notes = "Este metodo cadastra um novo usuario no sistema.")
+				  notes = "Este metodo cadastra um novo cliente no sistema.")
 	@ApiResponses({ 
 		@ApiResponse(code = 400, message = "Requisição inválida."),
 		@ApiResponse(code = 401, message = "Não autorizado."), 
