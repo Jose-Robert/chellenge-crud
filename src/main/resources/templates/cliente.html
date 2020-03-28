@@ -15,9 +15,13 @@
 <div class="container">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3><strong>Lista de Clientes</strong></h3>
+			<h3><span class="glyphicon glyphicon-th-list"></span>
+			<strong>Lista de Clientes</strong></h3>
 			<div sec:authorize="isAuthenticated()" align="left"><a th:href="@{/logout}">
-			<strong style="color: white;">Desconectar do Sistema</strong></a></div>
+			<button type="button" class="btn btn-default btn-sm">
+         	 <span class="glyphicon glyphicon-log-out"></span> Log out
+       		</button></a>
+			</div>
 		</div>
 		<div class="panel-body">
 		<div class="form-group row">
@@ -45,8 +49,10 @@
 							<td th:text="${cliente.cpf}"></td>
 							<td>
 								<div class="btn-group pull-right">
-							   		<a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${cliente.id})}">Editar</a>
-							   		<a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${cliente.id})}">Excluir</a>
+							   		<a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${cliente.id})}">
+							   		 <span class="glyphicon glyphicon-edit"></span> Editar</a>
+							   		<a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${cliente.id})}">
+							   		<span class="glyphicon glyphicon-trash"></span> Excluir</a>
 							   </div>
 							</td>
 						</tr>
@@ -55,7 +61,8 @@
 			</div>
 		</div>
 		<div class="panel-footer">
-			<a class="btn btn-sm btn-success" th:href="@{/add}">Adicionar</a>
+			<a class="btn btn-sm btn-success" th:href="@{/add}">
+			<span class="glyphicon glyphicon-plus-sign"></span> Adicionar </a>
 		</div>
 	</div>
 </div>

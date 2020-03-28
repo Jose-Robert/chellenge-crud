@@ -99,6 +99,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3>
+				<span class="glyphicon glyphicon-user"></span>
 					<strong>Cadastro de Clientes</strong>
 				</h3>
 			</div>
@@ -274,8 +275,10 @@
 					</div>
 					<div class="form-row">
 						<button type="submit" class="btn btn-sm btn-primary" style="width: 100px"
-							autofocus="autofocus" th:href="@{/}">Salvar</button>
-						<a th:href="@{/}" class="btn btn-sm btn-default" style="width: 100px">Cancelar</a>
+							autofocus="autofocus" th:href="@{/}">
+							<span class="glyphicon glyphicon-floppy-saved"></span> Salvar</button>
+						<a th:href="@{/}" class="btn btn-sm btn-danger" style="width: 100px">
+						<span class="glyphicon glyphicon-remove"></span> Cancelar</a>
 					</div>
 				</form>
 			</div>

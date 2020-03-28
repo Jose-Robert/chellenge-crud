@@ -63,7 +63,7 @@
 					</div>
 					<div class="form-group"
 						th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
-						<label for="email" class="control-label">E-mail</label> <input
+						<label for="email" class="control-label">E-mail</label> <input type="email"
 							id="email" class="form-control" th:field="*{email}" autofocus="autofocus" />
 						<p class="error-message"
 							th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation
@@ -72,7 +72,7 @@
 					<div class="form-group"
 						th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
 						<label for="confirmEmail" class="control-label">Confirmar
-							e-mail</label> <input id="confirmEmail" class="form-control"
+							E-mail</label> <input type="email"  id="confirmEmail" class="form-control"
 							th:field="*{confirmEmail}" autofocus="autofocus" />
 						<p class="error-message"
 							th:each="error : ${#fields.errors('confirmEmail')}"
@@ -107,8 +107,10 @@
 							error</p>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-success">Salvar</button>
-						<span>Já registrado? <a href="/" th:href="@{/login}">faça login aqui.</a></span>
+						<button type="submit" class="btn btn-success" style="width: 100px">
+						<span class="glyphicon glyphicon-save"></span> Salvar</button>
+						<span>Já registrado? <a href="/" th:href="@{/login}">faça login aqui
+						 <span class="glyphicon glyphicon-log-in"></span></a></span>
 					</div>
 
 				</form>
